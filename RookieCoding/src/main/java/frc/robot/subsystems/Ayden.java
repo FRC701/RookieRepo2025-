@@ -24,6 +24,11 @@ private TalonFX AydenMotor;
   public void stopAyden(){
     AydenMotor.setVoltage(0);
   }
+
+  public void MoveAydenMotor(double speed){
+    AydenMotor.setVoltage(speed * 12);
+  }
+  
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
