@@ -10,7 +10,9 @@ import frc.robot.subsystems.ZophyaFeeder;
 public class moveZophyaFeeder extends Command {
   /** Creates a new moveFeeder. */
 
+//mSpeed defines the speed of the motor.
 private double mSpeed;
+//blah blah this is the motor
 private ZophyaFeeder mZophyaFeeder;
 
   public moveZophyaFeeder(double speed, ZophyaFeeder feeder) {
@@ -21,7 +23,13 @@ private ZophyaFeeder mZophyaFeeder;
 
   // Called when the command is initially scheduled.
   @Override
-  public void initialize() {}
+  public void initialize() {
+// when the speed of motor is 0 it'll turn it up when initialized 
+    if(mSpeed == 0){
+      mSpeed = 1;
+    }
+
+  }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
