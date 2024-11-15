@@ -14,7 +14,7 @@ public class AmelieSubsystem extends SubsystemBase{
 
     private TalonFX AmelieMotor;
 
-    public Amelie() {
+    public AmelieSubsystem() {
         AmelieMotor = new TalonFX(0);
     }
 
