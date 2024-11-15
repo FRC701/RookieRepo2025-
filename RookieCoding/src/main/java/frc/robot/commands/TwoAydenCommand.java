@@ -4,12 +4,14 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.units.Voltage;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.TwoAyden;
 
 public class TwoAydenCommand extends Command {
-  /** Creates a new MovingTwoAyden. */
+ //This is the motor
   private TwoAyden mTwoAyden;
+  //MSpeed defines speed
   private double mSpeed;
   public TwoAydenCommand(TwoAyden TwoAyden, double speed) {
     // Use addRequirements() here to declare subsystem dependencies.
@@ -24,9 +26,14 @@ public class TwoAydenCommand extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    if(mSpeed >= 4){
     mTwoAyden.spinTwoAydenLeftMotor(mSpeed);
     mTwoAyden.spinTwoAydenRightMotor(mSpeed);
+  }else if(mSpeed < 4){
+    mTwoAyden.spinTwoAydenLeftMotor(1);
+    mTwoAyden.spinTwoAydenRightMotor(1);
   }
+}
 
   // Called once the command ends or is interrupted.
   @Override
