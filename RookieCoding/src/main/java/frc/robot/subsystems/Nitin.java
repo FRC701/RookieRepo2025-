@@ -4,6 +4,7 @@
 
 package frc.robot.subsystems;
 
+
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 import com.ctre.phoenix6.hardware.TalonFX;
@@ -19,7 +20,7 @@ public class Nitin extends SubsystemBase {
     InitialMotor.setVoltage(6);
   }
 
-  publicVoid endIntake() {
+  public void endIntake() {
     InitialMotor.setVoltage(1);
   }
 
@@ -27,3 +28,4 @@ public class Nitin extends SubsystemBase {
   public void periodic () {
   }
 }
+
