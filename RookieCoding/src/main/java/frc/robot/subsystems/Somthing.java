@@ -10,11 +10,11 @@ import com.ctre.phoenix6.hardware.TalonFX;
 
 
 /** Add your docs here. */
-public class AmelieSubsystem extends SubsystemBase{
+public class Somthing extends SubsystemBase{
 
     private TalonFX AmelieMotor;
 
-    public AmelieSubsystem() {
+    public Somthing() {
         AmelieMotor = new TalonFX(0);
     }
 

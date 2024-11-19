@@ -5,17 +5,19 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.subsytems.AmelieSubsystem;
+import frc.robot.subsytems.Somthing;
 
 
 public class Motor extends Command {
   /** Creates a new Motor. */
-  private AmelieSubsystem;
+  private AmelieMotor mAmelieMotor;
   private double mSpeed;
-  public AmelieCommand(Amelie amelie, double speed) {
+
+  public Motor(AmelieMotor AmelieMotor, double speed) {
     // Use addRequirements() here to declare subsystem dependencies.
+  this.AmelieMotor = AmelieMotor;
   this.mSpeed = speed;
-  this.AmelieSubsystem}
+  }
  
 
   // Called when the command is initially scheduled.
@@ -24,8 +26,10 @@ public class Motor extends Command {
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() {
 
+  }
+  
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {}
