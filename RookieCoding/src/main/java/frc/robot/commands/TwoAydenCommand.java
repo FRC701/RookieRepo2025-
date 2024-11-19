@@ -4,7 +4,6 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.units.Voltage;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.TwoAyden;
 
@@ -26,13 +25,18 @@ public class TwoAydenCommand extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    if(mSpeed >= 4){
+    if(mSpeed >= 10){
     mTwoAyden.spinTwoAydenLeftMotor(mSpeed);
     mTwoAyden.spinTwoAydenRightMotor(mSpeed);
-  }else if(mSpeed < 4){
+  }else if(mSpeed < 10){
     mTwoAyden.spinTwoAydenLeftMotor(1);
     mTwoAyden.spinTwoAydenRightMotor(1);
+  }else if(mSpeed < 1){
+    mTwoAyden.stopTwoAydenLeftMotor();
+    mTwoAyden.stopTwoAydenRightMotor();
   }
+    
+  
 }
 
   // Called once the command ends or is interrupted.
@@ -41,6 +45,7 @@ public class TwoAydenCommand extends Command {
     mTwoAyden.stopTwoAydenLeftMotor();
     mTwoAyden.stopTwoAydenRightMotor();
   }
+
 
   // Returns true when the command should end.
   @Override
