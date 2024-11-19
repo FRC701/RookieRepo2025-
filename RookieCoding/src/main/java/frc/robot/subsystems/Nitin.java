@@ -27,5 +27,17 @@ public class Nitin extends SubsystemBase {
   @Override
   public void periodic () {
   }
+
+  @Override
+  public void condition () {
+    if (Nitin_Command != null) {
+      Nitin_Command.cancel();
+    }
+  
+  }
+
 }
+
+
+
 
