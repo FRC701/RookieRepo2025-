@@ -6,17 +6,18 @@ package frc.robot.commands;
 
 import frc.robot.subsystems.Nitin;
 import edu.wpi.first.wpilibj2.command.Command;
-import edu.wpi.first.wpilibj2.command.Commands;
+//import edu.wpi.first.wpilibj2.command.Commands;
 
 public class Nitin_Command extends Command {
   /** Creates a new Nitin_Command. */
   
   private final Nitin m_subsystem;
   
-  public Nitin_Command(Nitin subsystem) {
+  public Nitin_Command(Nitin subsystem) {   
     m_subsystem = subsystem;
 
-    Addrequirements(subsystem);
+    //Addrequirements(subsystem);
+    
     // Use addRequirements() here to declare subsystem dependencies.
   }
 

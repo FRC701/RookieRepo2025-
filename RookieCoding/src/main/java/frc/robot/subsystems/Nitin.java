@@ -7,14 +7,17 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
+import frc.robot.commands.Nitin_Command;
 import com.ctre.phoenix6.hardware.TalonFX;
 
 public class Nitin extends SubsystemBase {
   /** Creates a new Nitin. */
+
+  private TalonFX InitialMotor;
+  
   public Nitin() {
     InitialMotor = new TalonFX(3);
   }
-
   
   public void spinMotor() {
     InitialMotor.setVoltage(6);
