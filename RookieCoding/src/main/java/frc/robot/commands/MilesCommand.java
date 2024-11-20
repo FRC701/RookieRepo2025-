@@ -5,11 +5,16 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.Command;
+import frc.robot.subsystems.MilesSubsystem; //THIS IS AN IMPORT
 
 public class MilesCommand extends Command {
+
+private MilesSubsystem mMilesMotor;
+private MilesSubsystem mMilesMotorNegative;
   /** Creates a new MilesCommand. */
-  public MilesCommand() {
-    // Use addRequirements() here to declare subsystem dependencies.
+  public MilesCommand(MilesSubsystem MilesMotor, MilesSubsystem MilesMotorNegative) {
+   this.mMilesMotor = MilesMotor;
+   this.mMilesMotorNegative = MilesMotorNegative; 
   }
 
   // Called when the command is initially scheduled.
@@ -18,7 +23,7 @@ public class MilesCommand extends Command {
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() {mMilesMotor.MilesVariableLoop(); mMilesMotorNegative.MilesVariableLoopNegative();}
 
   // Called once the command ends or is interrupted.
   @Override
