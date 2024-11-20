@@ -6,7 +6,7 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import com.ctre.phoenix6.hardware.TalonFX;
-import com.ctre.phoenix6.configs.TalonFXConfiguration;
+
 
 public class SecondZophyaFeeder extends SubsystemBase {
   /** Creates a new SecondZophyaFeeder. */
@@ -17,19 +17,19 @@ public SecondZophyaFeeder(){
   secondFeederMotor = new TalonFX(1);
 }
 
-public void feederSpinMotor() {
+public void SecondFeederSpinMotor() {
   secondFeederMotor.setVoltage(4);
 }
 
-public void feederStopMotor() {
+public void SecondFeederStopMotor() {
   secondFeederMotor.setVoltage(0);
 }
 
-public void reverseFeederMotor(){
+public void SecondReverseFeederMotor(){
   secondFeederMotor.setVoltage(-4);
 }
  
-public void spinFeederMotor(double speed) {
+public void SecondSpinFeederMotor(double speed) {
   secondFeederMotor.setVoltage(speed);
 }
 
