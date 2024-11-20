@@ -15,6 +15,7 @@ public class Motor extends Command {
 
   public Motor(Somthing AmelieMotor, double speed) {
     // Use addRequirements() here to declare subsystem dependencies.
+    // My motor and speed
   this.mMotor = AmelieMotor;
   this.mSpeed = speed;
   }
@@ -27,7 +28,13 @@ public class Motor extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    if(mSpeed==8){
     mMotor.spinAmelieMotor();
+    }
+    else if(mSpeed)
+    }
+    mMotor.spinAmelieMotor();
+
   }
   
   // Called once the command ends or is interrupted.
