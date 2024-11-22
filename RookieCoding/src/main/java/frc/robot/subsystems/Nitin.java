@@ -11,9 +11,10 @@ import frc.robot.commands.Nitin_Command;
 import com.ctre.phoenix6.hardware.TalonFX;
 
 public class Nitin extends SubsystemBase {
-  /** Creates a new Nitin. */
+  /** Creates a new Nitin. */  
 
   private TalonFX InitialMotor;
+  private TalonFX Nitin_Command;
   
   public Nitin() {
     InitialMotor = new TalonFX(3);
