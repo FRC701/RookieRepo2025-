@@ -11,11 +11,13 @@ public class MilesCommand extends Command {
 
 private MilesSubsystem mMilesMotor;
 private MilesSubsystem mMilesMotorNegative;
+private MilesSubsystem mVariableVariable;
   /** Creates a new MilesCommand. */
-  public MilesCommand(MilesSubsystem MilesMotor, MilesSubsystem MilesMotorNegative) {
+  public MilesCommand(MilesSubsystem MilesMotor, MilesSubsystem MilesMotorNegative, int variableVariable) {
    this.mMilesMotor = MilesMotor;
    this.mMilesMotorNegative = MilesMotorNegative; 
-  }
+   this.mVariableVariable = variableVariable;}
+
 
   // Called when the command is initially scheduled.
   @Override
@@ -23,13 +25,13 @@ private MilesSubsystem mMilesMotorNegative;
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {mMilesMotor.MilesVariableLoop(); mMilesMotorNegative.MilesVariableLoopNegative();}
+  public void execute() {mMilesMotor.milesMotorMasterLoop(); mMilesMotorNegative.milesMotorMasterLoop();}
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {}
+  public void end(boolean interrupted) {MilesMotor.milesMotorMasterLoop();}
 
-  // Returns true when the command should end.
+  // Returns true when the command should end.0o
   @Override
   public boolean isFinished() {
     return false;
