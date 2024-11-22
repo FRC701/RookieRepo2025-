@@ -25,6 +25,7 @@ public class TwoAydenCommand extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    // if else if else if statement for the speed for leftmotor and rightmotor
     if(mSpeed >= 10){
     mTwoAyden.spinTwoAydenLeftMotor(mSpeed);
     mTwoAyden.spinTwoAydenRightMotor(mSpeed);
@@ -42,6 +43,7 @@ public class TwoAydenCommand extends Command {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
+    //stops left and right motor
     mTwoAyden.stopTwoAydenLeftMotor();
     mTwoAyden.stopTwoAydenRightMotor();
   }

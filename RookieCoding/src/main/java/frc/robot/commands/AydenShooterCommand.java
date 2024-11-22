@@ -26,16 +26,20 @@ public class AydenShooterCommand extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    //If else if else if for shooter speed
     if(mSpeed>=10){
     mAydenShooter.AydenShooterShoot(10);
     }else if(mSpeed<10){
       mAydenShooter.AydenShooterShoot(mSpeed);
+    }else if(mSpeed<1){
+      mAydenShooter.StopAydenShooter();
     }
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
+    // Stops shooter
     mAydenShooter.StopAydenShooter();
   }
 
