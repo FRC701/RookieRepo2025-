@@ -4,14 +4,26 @@
 
 package frc.robot.subsystems;
 
-import 
+import com.ctre.phoenix6.hardware.TalonFX;
+import frc.robot.Constants;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Ryan extends SubsystemBase {
   /** Creates a new Ryan. */
+
+ private TalonFx JeefMotorJr;
+
   public Ryan() {
-    
+    JeefMotorJr = new TalonFX(2);
   }
+
+ public void spinMotor () {
+ JeefMotorJr.setVoltage(22);
+ }
+
+ public void endIntake () {
+  JeefMotorJr.setVoltage(0);
+ }
 
   @Override
   public void periodic() {
