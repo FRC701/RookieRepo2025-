@@ -26,15 +26,15 @@ public class Motor extends Command {
   public void initialize() {}
 
   // Called every time the scheduler runs while the command is scheduled.
+  // THIS IS MY ELSE IF STATEMENT
   @Override
   public void execute() {
-    if(mSpeed==8){
-    mMotor.spinAmelieMotor();
-    }
-    else if(mSpeed)
-    }
+        if(mSpeed==8){
     mMotor.spinAmelieMotor();
 
+    }else if(mSpeed==12){
+    mMotor.stopAmelieMotor();
+    } 
   }
   
   // Called once the command ends or is interrupted.

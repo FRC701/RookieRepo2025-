@@ -22,7 +22,7 @@ public class Somthing extends SubsystemBase{
         AmelieMotor.setVoltage(4);
     }
 
-    public void stopAmelie() {
+    public void stopAmelieMotor() {
         AmelieMotor.setVoltage(0);
     }
     public void MoveAmelie(double speed) {
