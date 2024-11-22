@@ -4,6 +4,8 @@
 
 package frc.robot.commands;
 
+import com.ctre.phoenix6.hardware.TalonFX;
+
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.SecondZophyaFeeder;
 
@@ -24,10 +26,6 @@ private SecondZophyaFeeder mSecondZophyaFeeder;
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-// when the speed of motor is 0 it'll turn it up when initialized 
-    if(mSpeed == 0){
-      mSpeed = 1;
-    }
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -36,7 +34,7 @@ private SecondZophyaFeeder mSecondZophyaFeeder;
     mSecondZophyaFeeder.SecondSpinFeederMotor(mSpeed);
   }
 
-  // Called once the command ends or is interrupted.
+  //Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
     mSecondZophyaFeeder.SecondFeederStopMotor();

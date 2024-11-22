@@ -16,10 +16,6 @@ public ZophyaFeeder() {
     feederMotor = new TalonFX(1);
 }
 
-public void feederSpinMotor() {
-    feederMotor.setVoltage(4);
-}
-
 public void feederStopMotor() {
     feederMotor.setVoltage(0);
 }
