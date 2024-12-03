@@ -16,7 +16,7 @@ public class AydenShooter extends SubsystemBase {
     AydenShooter=new TalonFX(3);
   }
  
-  //Makes AydenShooter shoot probably 
+  //Sets shoot speed for AydenShooter
   public void AydenShooterShootSpeed(double speed) {
     AydenShooter.setVoltage(speed);
   }
