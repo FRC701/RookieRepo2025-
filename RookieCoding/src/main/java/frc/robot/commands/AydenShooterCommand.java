@@ -28,9 +28,9 @@ public class AydenShooterCommand extends Command {
   public void execute() {
     //If else if else if for shooter speed
     if(mSpeed>=10){
-    mAydenShooter.AydenShooterShoot(10);
+    mAydenShooter.AydenShooterShootSpeed(10);
     }else if(mSpeed<10){
-      mAydenShooter.AydenShooterShoot(mSpeed);
+      mAydenShooter.AydenShooterShootSpeed(mSpeed);
     }else if(mSpeed<1){
       mAydenShooter.StopAydenShooter();
     }

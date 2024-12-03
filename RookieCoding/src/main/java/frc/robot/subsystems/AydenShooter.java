@@ -17,7 +17,7 @@ public class AydenShooter extends SubsystemBase {
   }
  
   //Makes AydenShooter shoot probably 
-  public void AydenShooterShoot(double speed) {
+  public void AydenShooterShootSpeed(double speed) {
     AydenShooter.setVoltage(speed);
   }
 
