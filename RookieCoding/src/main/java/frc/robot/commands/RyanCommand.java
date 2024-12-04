@@ -5,11 +5,19 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.Command;
+import frc.robot.subsystems.Ryan;
 
 public class RyanCommand extends Command {
+  private double mSpeed;
+  private Ryan mJeefMotorJr;
+  private Ryan mUmbraMotor;
+
   /** Creates a new RyanCommand. */
-  public RyanCommand() {
+  public RyanCommand(Ryan JeefMotorJr, Ryan UmbraMotor, double speed) {
     // Use addRequirements() here to declare subsystem dependencies.
+  this.mJeefMotorJr = JeefMotorJr;
+  this.mUmbraMotor = UmbraMotor;
+  this.mSpeed = speed; 
   }
 
   // Called when the command is initially scheduled.
@@ -18,7 +26,9 @@ public class RyanCommand extends Command {
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() {
+ 
+  }
 
   // Called once the command ends or is interrupted.
   @Override
