@@ -13,12 +13,14 @@ public class LoganDSubsystem extends SubsystemBase {
   private TalonFX FrontWheelMotor;
   private TalonFX BackWheelMotor;
   private TalonFX ShooterMotor;
+  private TalonFX Stop;
 
   public LoganDSubsystem() 
   {
     FrontWheelMotor = new TalonFX(1);
     BackWheelMotor = new TalonFX(2);
     ShooterMotor = new TalonFX(3);
+    Stop = new TalonFX(4);
   }
 
   public void forward() {
@@ -29,6 +31,9 @@ public class LoganDSubsystem extends SubsystemBase {
   }
   public void shooter() {
     ShooterMotor.setVoltage(4.0);
+  }
+  public void stop() {
+    Stop.setVoltage(0.0);
   }
 
   @Override
