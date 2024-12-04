@@ -17,7 +17,7 @@ private double mSpeed;
 //blah blah this is the motor
 private SecondZophyaFeeder mSecondZophyaFeeder;
 
-  public moveSecondZophyaFeeder(double speed, SecondZophyaFeeder secondFeeder) {
+  public moveSecondZophyaFeeder(SecondZophyaFeeder secondFeeder, double speed) {
     // Use addRequirements() here to declare subsystem dependencies.
     this.mSpeed = speed;
     this.mSecondZophyaFeeder = secondFeeder;
