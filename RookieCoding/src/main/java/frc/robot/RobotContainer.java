@@ -13,7 +13,7 @@ import frc.robot.commands.moveSecondZophyaFeeder;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.SecondZophyaFeeder;
 import frc.robot.subsystems.ZophyaFeeder;
-import frc.robot.subsystems.ZophyaShooter;
+import frc.robot.subsystems.ZophyaShooterSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;

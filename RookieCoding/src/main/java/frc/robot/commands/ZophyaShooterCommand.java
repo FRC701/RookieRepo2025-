@@ -7,16 +7,16 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.Constants;
-import frc.robot.subsystems.ZophyaShooter;
+import frc.robot.subsystems.ZophyaShooterSubsystem;
 
 public class ZophyaShooterCommand extends Command {
   /** Creates a new ZophyaShooterCommand. */
 
-private ZophyaShooter mZophyaShooter;
+private ZophyaShooterSubsystem mZophyaShooter;
 private double mSpeed;
 
 
-  public ZophyaShooterCommand(ZophyaShooter ZophyaShooter, double speed) {
+  public ZophyaShooterCommand(ZophyaShooterSubsystem ZophyaShooter, double speed) {
     // Use addRequirements() here to declare subsystem dependencies.
     this.mZophyaShooter = ZophyaShooter;
     this.mSpeed = speed;

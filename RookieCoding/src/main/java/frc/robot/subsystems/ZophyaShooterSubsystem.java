@@ -8,12 +8,12 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import com.ctre.phoenix6.hardware.TalonFX;
 
 
-public class ZophyaShooter extends SubsystemBase {
+public class ZophyaShooterSubsystem extends SubsystemBase {
 
   /** Creates a new ZophyaShooter. */
   private TalonFX ZophyaShooter;
 
-  public ZophyaShooter() {
+  public ZophyaShooterSubsystem() {
     ZophyaShooter = new TalonFX(4);
   }
 
