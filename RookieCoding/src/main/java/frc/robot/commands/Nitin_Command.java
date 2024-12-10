@@ -11,10 +11,12 @@ import edu.wpi.first.wpilibj2.command.Command;
 public class Nitin_Command extends Command {
   /** Creates a new Nitin_Command. */
   
-  private final Nitin m_subsystem;
+  private Nitin mNitin_Command;
+  private double mSpeed;
   
-  public Nitin_Command(Nitin subsystem) {   
-    m_subsystem = subsystem;
+  public Nitin_Command(Nitin mNitin_Command, mSpeed) {   
+    this.Nitin_Command = mNitin_Command;
+    this.Speed = mSpeed; 
 
     //Addrequirements(subsystem);
     
@@ -27,11 +29,15 @@ public class Nitin_Command extends Command {
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() {
+    mNitin_Command.spinMotor();
+  }
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {}
+  public void end(boolean interrupted) {
+    mNitin_Command.stopMotor();
+  }
 
   // Returns true when the command should end.
   @Override

@@ -18,14 +18,17 @@ public class Nitin extends SubsystemBase {
   
   public Nitin() {
     InitialMotor = new TalonFX(3);
+    Nitin_Command = new TalonFX(4);
   }
   
   public void spinMotor() {
     InitialMotor.setVoltage(6);
+    Nitin_Command.setVoltage(2);
   }
 
   public void endIntake() {
     InitialMotor.setVoltage(1);
+    Nitin_Command.setVoltage(0);
   }
 
   @Override

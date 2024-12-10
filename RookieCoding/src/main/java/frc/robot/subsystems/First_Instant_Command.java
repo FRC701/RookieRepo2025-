@@ -31,9 +31,8 @@ public class First_Instant_Command extends InstantCommand {
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    //Nitin.mSmartspeed = 0;
-    //Nitin.mShooterState = ShooterState.S_AccelerateShooter;
-    //Nitin.mSmartSpeed = this.speed;
+    mNitin.spinMotor;
+    
 
   }
 
