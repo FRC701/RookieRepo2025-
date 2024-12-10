@@ -10,27 +10,15 @@ import com.ctre.phoenix6.hardware.TalonFX;
 public class LoganDSubsystem extends SubsystemBase {
   /** Creates a new LoganDSubsystem. */
 
-  private TalonFX FrontWheelMotor;
-  private TalonFX BackWheelMotor;
-  private TalonFX ShooterMotor;
+  private TalonFX LoganMotor;
   private TalonFX Stop;
 
-  public LoganDSubsystem() 
-  {
-    FrontWheelMotor = new TalonFX(1);
-    BackWheelMotor = new TalonFX(2);
-    ShooterMotor = new TalonFX(3);
-    Stop = new TalonFX(4);
+  public LoganDSubsystem() {
+    LoganMotor = new TalonFX(1);
+    Stop = new TalonFX(2);
   }
-
   public void forward() {
-    FrontWheelMotor.setVoltage(2.0);
-  }
-  public void backward() {
-    BackWheelMotor.setVoltage(-2.0);
-  }
-  public void shooter() {
-    ShooterMotor.setVoltage(4.0);
+    LoganMotor.setVoltage(2.0);
   }
   public void stop() {
     Stop.setVoltage(0.0);

@@ -10,14 +10,12 @@ import frc.robot.subsystems.LoganDSubsystem;
 public class LoganDCommand extends Command {
   /** Creates a new LoganDCommand. */
 
-  private LoganDSubsystem mFrontWheelMotor;
-  private LoganDSubsystem mBackWheelMotor;
-  private LoganDSubsystem mShooterMotor;
+  private LoganDSubsystem mLoganMotor;
+  private LoganDSubsystem mStop;
 
-  public LoganDCommand(LoganDSubsystem FrontWheelMotor, LoganDSubsystem BackWheelMotor, LoganDSubsystem ShooterMotor) {
-    this.mFrontWheelMotor = FrontWheelMotor;
-    this.mBackWheelMotor = BackWheelMotor;
-    this.mShooterMotor = ShooterMotor;
+  public LoganDCommand(LoganDSubsystem LoganMotor, LoganDSubsystem Stop) {
+    this.mLoganMotor = LoganMotor;
+    this.mStop = Stop;
 
     // Use addRequirements() here to declare subsystem dependencies.
     
@@ -32,17 +30,13 @@ public class LoganDCommand extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    mFrontWheelMotor.forward();
-    mBackWheelMotor.backward();
-    mShooterMotor.shooter();
+    mLoganMotor.forward();
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    mFrontWheelMotor.stop();
-    mFrontWheelMotor.stop();
-    mShooterMotor.stop();
+    mLoganMotor.stop();
   }
 
   // Returns true when the command should end.
