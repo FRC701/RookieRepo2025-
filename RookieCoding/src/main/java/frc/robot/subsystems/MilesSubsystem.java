@@ -12,14 +12,30 @@ import com.ctre.phoenix6.hardware.TalonFX;
 public class MilesSubsystem extends SubsystemBase {
   /** Creates a new MilesSubsystem. */
 
-private TalonFX MilesMotor;
+public TalonFX MilesMotor;
 private boolean MilesVariable;
 private TalonFX MilesMotorNegative;
+private TalonFX milesmotor;
 
-public MilesSubsystem() {MilesMotor = new TalonFX(0);MilesMotorNegative = new TalonFX(1);}
 
-public void MilesVariableLoop(){while (MilesVariable = true) {MilesMotor.setVoltage(2);}}
-public void MilesVariableLoopNegative() {while (MilesVariable =! true) { MilesMotorNegative.setVoltage(-2);}}
+public MilesSubsystem() {
+  MilesMotor = new TalonFX(1);
+  MilesMotorNegative = new TalonFX(3); 
+  milesmotor = new TalonFX(2);
+}
+
+
+
+public void MilesVariableLoop(){
+  while (MilesVariable = true) {
+    MilesMotor.setVoltage(2);
+  }
+}
+public void MilesVariableLoopNegative() {
+  while (MilesVariable =! true) { 
+    MilesMotorNegative.setVoltage(-2);
+  }
+}
 
   @Override
   public void periodic() {    // This method will be called once per scheduler run

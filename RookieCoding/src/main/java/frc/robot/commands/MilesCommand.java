@@ -9,6 +9,7 @@ import frc.robot.subsystems.MilesSubsystem; //THIS IS AN IMPORT
 
 public class MilesCommand extends Command {
 
+
 private MilesSubsystem mMilesMotor;
 private MilesSubsystem mMilesMotorNegative;
 private MilesSubsystem mVariableVariable;
