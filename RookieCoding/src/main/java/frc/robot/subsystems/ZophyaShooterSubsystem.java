@@ -11,7 +11,7 @@ import com.ctre.phoenix6.hardware.TalonFX;
 public class ZophyaShooterSubsystem extends SubsystemBase {
 
   /** Creates a new ZophyaShooter. */
-  private TalonFX ZophyaShooter;
+  public TalonFX ZophyaShooter;
 
   public ZophyaShooterSubsystem() {
     ZophyaShooter = new TalonFX(4);
