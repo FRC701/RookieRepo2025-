@@ -4,35 +4,40 @@
 
 package frc.robot.commands;
 
+import com.ctre.phoenix6.hardware.TalonFX;
+
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.MilesSubsystem; //THIS IS AN IMPORT
 
 public class MilesCommand extends Command {
 
 
-private MilesSubsystem mMilesMotor;
-private MilesSubsystem mMilesMotorNegative;
-private MilesSubsystem mVariableVariable;
-  /** Creates a new MilesCommand. */
-  public MilesCommand(MilesSubsystem MilesMotor, MilesSubsystem MilesMotorNegative, int variableVariable) {
-   this.mMilesMotor = MilesMotor;
-   this.mMilesMotorNegative = MilesMotorNegative; 
-   this.mVariableVariable = variableVariable;}
+private TalonFX xMilesMotor;
+private TalonFX xMilesMotorNegative;
+private Boolean xMilesVariable;
+private MilesSubsystem xMilesSubsystem;
 
+  public MilesCommand(MilesSubsystem MilesSubsytem, TalonFX MilesMotor, TalonFX MilesMotorNegative, Boolean MilesVariable) {
+   this.xMilesMotor = MilesMotor;
+   this.xMilesMotorNegative = MilesMotorNegative; 
+   this.xMilesVariable = MilesVariable;
+  }
 
-  // Called when the command is initially scheduled.
   @Override
   public void initialize() {}
 
-  // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {mMilesMotor.milesMotorMasterLoop(); mMilesMotorNegative.milesMotorMasterLoop();}
+  public void execute() {
+    xMilesSubsystem.MilesVariableLoop(); 
+    xMilesSubsystem.MilesVariableLoopNegative();
+  }
 
-  // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {MilesMotor.milesMotorMasterLoop();}
+  public void end(boolean interrupted) {
+    xMilesSubsystem.MilesVariableLoop();
+    xMilesSubsystem.MilesVariableLoopNegative();
+  }
 
-  // Returns true when the command should end.0o
   @Override
   public boolean isFinished() {
     return false;

@@ -19,7 +19,6 @@ public class MilesCommandInsta extends InstantCommand {
   public void initialize() {
    if(xmilesvariable = true) {
    xmilesSubsystem.MilesMotor.setVoltage(12);
-
    }
 
 
