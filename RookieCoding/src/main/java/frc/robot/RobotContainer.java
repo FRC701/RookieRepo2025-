@@ -17,6 +17,26 @@ import frc.robot.subsystems.ZophyaShooterSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
+import frc.robot.subsystems.Nitin;
+
+
+private Nitin mNitin = new Nitin();
+
+private final CommandXboxController Driver =
+  new CommandXboxController(Constants.OperatorConstants.kDriverControllerPort);
+
+private void configureBindings() {
+
+  smartDashboard.setDefaultNumber(key: "Input Angle", defaultValue:0);
+
+  Driver.x().onTrue(new Nitin_Command(mNitin));
+
+
+}
+
+
+
+
 
 import frc.robot.commands.AydenShooterCommand;
 import frc.robot.subsystems.AydenShooter;
