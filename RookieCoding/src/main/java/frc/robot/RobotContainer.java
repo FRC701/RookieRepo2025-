@@ -5,15 +5,22 @@ package frc.robot;
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.Autos;
 import frc.robot.commands.ExampleCommand;
+import frc.robot.commands.MilesCommandInsta;
 import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.MilesSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 
 
+
 public class RobotContainer {
-  
+  private MilesSubsystem m_MilesSubsystem;
+  private CommandXboxController milesController = new CommandXboxController(1);
+
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
+
+
 
   
   private final CommandXboxController m_driverController =
@@ -21,6 +28,12 @@ public class RobotContainer {
 
   
   public RobotContainer() {
+   
+   
+
+
+
+
   
     configureBindings();
   }
@@ -42,6 +55,7 @@ public class RobotContainer {
     // Schedule `exampleMethodCommand` when the Xbox controller's B button is pressed,
     // cancelling on release.
     m_driverController.b().whileTrue(m_exampleSubsystem.exampleMethodCommand());
+    milesController.x().onTrue(new MilesCommandInsta(m_MilesSubsystem, null));
   }
 
   /**
