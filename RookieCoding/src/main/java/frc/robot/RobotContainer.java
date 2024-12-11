@@ -11,6 +11,14 @@ import frc.robot.commands.ZophyaCommand;
 import frc.robot.commands.ZophyaShooterCommand;
 import frc.robot.commands.moveSecondZophyaFeeder;
 import frc.robot.subsystems.ExampleSubsystem;
+
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
+import edu.wpi.first.wpilibj2.command.button.Trigger;
+import frc.robot.subsystems.Somthing;
+import frc.robot.commands.Motor;
+
 import frc.robot.subsystems.SecondZophyaFeeder;
 import frc.robot.subsystems.ZophyaFeeder;
 import frc.robot.subsystems.ZophyaShooterSubsystem;
@@ -53,6 +61,7 @@ private void configureBindings() {
 }
 
 
+
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
  * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
@@ -71,6 +80,11 @@ public class RobotContainer {
 
   // The robot's subsystems and commands are defined here...
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
+  private  Somthing mSomthing2 = new Somthing();
+
+ private final CommandXboxController driver =
+ new CommandXboxController(OperatorConstants.kDriverControllerPort);
+
 
   private final CommandXboxController Driver =
   new CommandXboxController(OperatorConstants.kDriverControllerPort);
@@ -83,6 +97,7 @@ public class RobotContainer {
   public RobotContainer() {
     // Configure the trigger bindings
     configureBindings();
+
   }
 
   /**
@@ -95,12 +110,18 @@ public class RobotContainer {
    * joysticks}.
    */
   private void configureBindings() {
+    driver.y().onTrue(new Motor(mSomthing2, 0.3));
+
     // Schedule `ExampleCommand` when `exampleCondition` changes to `true`
     new Trigger(m_exampleSubsystem::exampleCondition)
         .onTrue(new ExampleCommand(m_exampleSubsystem));
 
+
+    
+
 Driver.x().onTrue(new moveSecondZophyaFeeder(mSecondZophyaFeeder,1));
 Driver.y().onTrue(new moveSecondZophyaFeeder(mSecondZophyaFeeder,1));
+
 
 
     // Schedule `exampleMethodCommand` when the Xbox controller's B button is pressed,
@@ -109,7 +130,8 @@ Driver.y().onTrue(new moveSecondZophyaFeeder(mSecondZophyaFeeder,1));
     m_driverController.x().onTrue(new AydenShooterCommand(mAydenShooter, 11));
     m_driverController.a().onTrue(new AydenShooterCommand(mAydenShooter, 5));
   }
-
+   
+  
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.
    *
