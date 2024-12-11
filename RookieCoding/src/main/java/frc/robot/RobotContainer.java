@@ -7,7 +7,13 @@ package frc.robot;
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.Autos;
 import frc.robot.commands.ExampleCommand;
+import frc.robot.commands.ZophyaCommand;
+import frc.robot.commands.ZophyaShooterCommand;
+import frc.robot.commands.moveSecondZophyaFeeder;
 import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.SecondZophyaFeeder;
+import frc.robot.subsystems.ZophyaFeeder;
+import frc.robot.subsystems.ZophyaShooterSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
@@ -33,16 +39,26 @@ private void configureBindings() {
  * periodic methods (other than the scheduler calls). Instead, the structure of the robot (including
  * subsystems, commands, and trigger mappings) should be declared here.
  */
+
 public class RobotContainer {
 
+  private SecondZophyaFeeder mSecondZophyaFeeder = new SecondZophyaFeeder();
+
+
+
+
   private AydenShooter mAydenShooter = new AydenShooter();
+
   // The robot's subsystems and commands are defined here...
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
 
+  private final CommandXboxController Driver =
+  new CommandXboxController(OperatorConstants.kDriverControllerPort);
+ 
   // Replace with CommandPS4Controller or CommandJoystick if needed
   private final CommandXboxController m_driverController =
       new CommandXboxController(OperatorConstants.kDriverControllerPort);
-
+  
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the trigger bindings
@@ -62,6 +78,10 @@ public class RobotContainer {
     // Schedule `ExampleCommand` when `exampleCondition` changes to `true`
     new Trigger(m_exampleSubsystem::exampleCondition)
         .onTrue(new ExampleCommand(m_exampleSubsystem));
+
+Driver.x().onTrue(new moveSecondZophyaFeeder(mSecondZophyaFeeder,1));
+Driver.y().onTrue(new moveSecondZophyaFeeder(mSecondZophyaFeeder,1));
+
 
     // Schedule `exampleMethodCommand` when the Xbox controller's B button is pressed,
     // cancelling on release.
