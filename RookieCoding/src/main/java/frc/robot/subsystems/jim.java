@@ -4,11 +4,25 @@
 
 package frc.robot.subsystems;
 
+import com.ctre.phoenix6.hardware.TalonFx;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class bob extends SubsystemBase {
-  /** Creates a new bob. */
-  public bob() {}
+public class jim extends SubsystemBase {
+  //Our motor
+  private TalonFx jimSecond; 
+  /** Creates a new jim. */
+  public jim() {
+    jimSecond = new TalonFx(4);
+  }
+
+  public void setSpeed(){
+    jimSecond.setVoltage(3);
+  }
+
+  public void stopMotor(){
+    jimSecond.setVoltage(0);
+  }
+
 
   @Override
   public void periodic() {
