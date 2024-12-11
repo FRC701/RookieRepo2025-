@@ -51,7 +51,7 @@ public class RobotContainer {
    * joysticks}.
    */
   private void configureBindings() {
-    driver.y().onTrue(new Motor(mSomthing2, 93408000));
+    driver.y().onTrue(new Motor(mSomthing2, 0.3));
 
     // Schedule `ExampleCommand` when `exampleCondition` changes to `true`
     new Trigger(m_exampleSubsystem::exampleCondition)
