@@ -11,6 +11,9 @@ import frc.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
+
+import frc.robot.commands.AydenShooterCommand;
+import frc.robot.subsystems.AydenShooter;
 import frc.robot.subsystems.Ryan;
 
 private Ryan mRyan = new Ryan();
@@ -23,6 +26,7 @@ private void configureBindings() {
   Driver.x().onTrue(new RyanCommand(mRyan));
 }
 
+
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
  * "declarative" paradigm, very little robot logic should actually be handled in the {@link Robot}
@@ -30,6 +34,8 @@ private void configureBindings() {
  * subsystems, commands, and trigger mappings) should be declared here.
  */
 public class RobotContainer {
+
+  private AydenShooter mAydenShooter = new AydenShooter();
   // The robot's subsystems and commands are defined here...
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
 
@@ -60,6 +66,8 @@ public class RobotContainer {
     // Schedule `exampleMethodCommand` when the Xbox controller's B button is pressed,
     // cancelling on release.
     m_driverController.b().whileTrue(m_exampleSubsystem.exampleMethodCommand());
+    m_driverController.x().onTrue(new AydenShooterCommand(mAydenShooter, 11));
+    m_driverController.a().onTrue(new AydenShooterCommand(mAydenShooter, 5));
   }
 
   /**
